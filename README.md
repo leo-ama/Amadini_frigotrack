@@ -58,29 +58,6 @@ Le misure vengono salvate dal server in `data/readings.json`, nella cartella di 
 
 Il dialogo ha due fasi: prima l'**handshake**, che produce la chiave di sessione, poi lo **scambio di messaggi cifrati**.
 
-### Handshake
-
-```mermaid
-sequenceDiagram
-    participant C as Client (sensore)
-    participant S as Server
-    Note over C: sceglie a casuale<br/>A = g^a mod p
-    C->>S: POST /api/handshake {p, g, A} (in chiaro)
-    Note over S: sceglie b casuale<br/>B = g^b mod p<br/>K = A^b mod p<br/>genera session_id
-    S-->>C: 200 {session_id, B}
-    Note over C: K = B^a mod p<br/>(stesso K del server)
-    Note over C,S: chiave = SHA-256(K), K non viaggia mai in rete
-    C->>S: POST /api/telemetry {session_id, ciphertext, tag}
-    Note over S: 1. decifra (tag GCM)<br/>2. valida con lo schema<br/>3. salva e controlla l'allarme
-    S-->>C: 200 busta cifrata {status, alarm?}
-    C->>S: POST /api/close (busta cifrata)
-    S-->>C: 200 busta cifrata, poi la chiave viene cancellata
-```
-
-- Gruppo: **RFC 3526, gruppo 14** (2048 bit), generatore `g = 2`. Il server accetta solo questo gruppo.
-- Segreti `a` e `b`: 256 bit casuali. Il calcolo usa `BigInteger.ModPow`; lo scambio è implementato nel progetto, senza librerie che lo eseguano.
-- Chiave AES-256 = SHA-256 del segreto condiviso K.
-
 ### Busta cifrata
 
 Dopo l'handshake, ogni messaggio viaggia in questa forma (tutto in Base64, tranne `session_id`):
