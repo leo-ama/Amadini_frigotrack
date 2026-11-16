@@ -1,0 +1,22 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Conferma (ack) di una misura, con eventuale allarme",
+  "type": "object",
+  "required": ["status", "sensor_id"],
+  "properties": {
+    "status": { "enum": ["ok"] },
+    "sensor_id": { "type": "string", "pattern": "^[A-Z]+-[A-Z]{2}-[0-9]{3}$" },
+    "alarm": {
+      "type": "object",
+      "required": ["type", "temperature_c", "min_c", "max_c"],
+      "properties": {
+        "type": { "enum": ["temperature_high", "temperature_low"] },
+        "temperature_c": { "type": "number" },
+        "min_c": { "type": "number" },
+        "max_c": { "type": "number" }
+      },
+      "additionalProperties": false
+    }
+  },
+  "additionalProperties": false
+}

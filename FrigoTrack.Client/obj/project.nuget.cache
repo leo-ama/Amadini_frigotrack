@@ -1,0 +1,13 @@
+{
+  "version": 2,
+  "dgSpecHash": "E6TD+Idzy/4=",
+  "success": true,
+  "projectFilePath": "C:\\Users\\amadini.22193\\Downloads\\FrigoTrack\\FrigoTrack\\FrigoTrack.Client\\FrigoTrack.Client.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\amadini.22193\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",
+    "C:\\Users\\amadini.22193\\.nuget\\packages\\json.more.net\\2.1.1\\json.more.net.2.1.1.nupkg.sha512",
+    "C:\\Users\\amadini.22193\\.nuget\\packages\\jsonpointer.net\\5.3.1\\jsonpointer.net.5.3.1.nupkg.sha512",
+    "C:\\Users\\amadini.22193\\.nuget\\packages\\jsonschema.net\\7.4.0\\jsonschema.net.7.4.0.nupkg.sha512"
+  ],
+  "logs": []
+}

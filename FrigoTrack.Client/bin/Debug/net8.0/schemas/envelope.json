@@ -1,0 +1,12 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Busta cifrata (ciò che viaggia davvero in rete)",
+  "type": "object",
+  "required": ["session_id", "ciphertext", "tag"],
+  "properties": {
+    "session_id": { "type": "string", "pattern": "^[0-9a-f]{8}$" },
+    "ciphertext": { "type": "string", "minLength": 20, "pattern": "^[A-Za-z0-9+/]+={0,2}$" },
+    "tag": { "type": "string", "minLength": 24, "maxLength": 24, "pattern": "^[A-Za-z0-9+/]+={0,2}$" }
+  },
+  "additionalProperties": false
+}
