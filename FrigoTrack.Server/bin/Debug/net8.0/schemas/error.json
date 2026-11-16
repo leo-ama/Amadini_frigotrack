@@ -1,0 +1,23 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Messaggio di errore (indica il campo sbagliato)",
+  "type": "object",
+  "required": ["error", "message"],
+  "properties": {
+    "error": { "enum": ["bad_request", "unauthorized", "not_found"] },
+    "message": { "type": "string", "minLength": 1 },
+    "details": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["field", "message"],
+        "properties": {
+          "field": { "type": "string" },
+          "message": { "type": "string" }
+        },
+        "additionalProperties": false
+      }
+    }
+  },
+  "additionalProperties": false
+}

@@ -1,0 +1,10 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Conferma di chiusura sessione",
+  "type": "object",
+  "required": ["status"],
+  "properties": {
+    "status": { "enum": ["closed"] }
+  },
+  "additionalProperties": false
+}

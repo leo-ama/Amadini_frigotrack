@@ -1,0 +1,12 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Handshake - richiesta del client (in chiaro: p, g, A sono pubblici)",
+  "type": "object",
+  "required": ["p", "g", "A"],
+  "properties": {
+    "p": { "type": "string", "pattern": "^[0-9A-Fa-f]{1,1024}$" },
+    "g": { "type": "string", "pattern": "^[0-9A-Fa-f]{1,8}$" },
+    "A": { "type": "string", "pattern": "^[0-9A-Fa-f]{1,1024}$" }
+  },
+  "additionalProperties": false
+}

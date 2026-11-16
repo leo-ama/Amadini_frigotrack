@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\build\FrigoTrack.Server.props" />
+</Project>

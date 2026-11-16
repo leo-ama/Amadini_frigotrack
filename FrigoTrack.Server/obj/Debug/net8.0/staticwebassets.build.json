@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "dmIoisp53kNLM/fkNFIC4s5gTSESvnFcMcfvDDJu7s4=",
+  "Source": "FrigoTrack.Server",
+  "BasePath": "_content/FrigoTrack.Server",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}
